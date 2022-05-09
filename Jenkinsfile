@@ -44,17 +44,9 @@ spec:
         stage('docker build') {
             steps {
                 sh 'docker build -t sainikhil1999/demoapp .'
+                sh 'docker login -u sainikhil1999 -p Akhil@1999'
+                sh 'docker push sainikhil1999/demoapp'
        }
-    }
-   stage('docker login') {
-       steps {
-            sh 'docker login -u sainikhil1999 -p Akhil@1999'
-        }
-    }
-    stage('docker push') {
-        steps {
-            sh 'docker push sainikhil1999/demoapp'
-           }
     }
      stage("install helm"){
        steps {
