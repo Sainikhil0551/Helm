@@ -1,0 +1,62 @@
+<<<<<<< HEAD
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: myapp
+
+spec:
+
+  selector:
+
+    matchLabels:
+
+      run: myapp
+
+  replicas: 1
+
+  template:
+
+    metadata:
+
+      labels:
+
+        run: myapp
+
+    spec:
+
+      containers:
+
+      - name: myapp
+
+        image: sainikhil1999/myapp
+
+        ports:
+
+        - containerPort: 5000
+=======
+--- 
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: glams
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      run: glams
+  template: 
+    metadata: 
+      labels: 
+        run: glams
+    spec: 
+      containers: 
+        - 
+          image: sainikhil1999/glams  
+          name: glams
+          ports: 
+            - 
+              containerPort: 6000
+>>>>>>> e70cdde46a71baf1d61ee3e1c8ad7e823f6f33d3
