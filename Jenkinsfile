@@ -67,6 +67,7 @@ spec:
            steps {
                sh 'helm version'
                sh 'helm upgrade --install dotnet1 dotnet-app'
+           }
  
              
            }
