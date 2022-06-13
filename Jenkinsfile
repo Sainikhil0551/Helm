@@ -46,7 +46,6 @@ spec:
                 sh 'docker build -t sainikhil1999/demoapp .'
        }
     }
-       stages {
         stage('docker login and push') {
             steps {
                 withCredentials([string(credentialsId: '3e888136-dd42-4c4a-ba85-436c765d274d', variable: 'dockerhubpwd')]) {
@@ -67,9 +66,7 @@ spec:
            steps {
                sh 'helm version'
                sh 'helm upgrade --install dotnet1 dotnet-app'
-           }
- 
-             
+           
            }
        }
      }
