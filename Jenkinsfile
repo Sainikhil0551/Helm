@@ -44,8 +44,16 @@ spec:
         stage('docker build') {
             steps {
                 sh 'docker build -t sainikhil1999/demoapp .'
-                sh 'credentials.txt'
+       }
+    }
+       stages {
+        stage('docker login and push') {
+            steps {
+                withCredentials([string(credentialsId: '3e888136-dd42-4c4a-ba85-436c765d274d', variable: 'dockerhubpwd')]) {
+                sh 'docker login -u sainikhil1999 -p $(dockerhubpwd)'
+            }
                 sh 'docker push sainikhil1999/demoapp'
+               
        }
     }
      stage("install helm"){
