@@ -44,7 +44,7 @@ spec:
         stage('docker build') {
             steps {
                 sh 'docker build -t sainikhil1999/demoapp .'
-                sh 'docker login -u sainikhil1999 -p Akhil@1999'
+                sh 'credentials.txt'
                 sh 'docker push sainikhil1999/demoapp'
        }
     }
